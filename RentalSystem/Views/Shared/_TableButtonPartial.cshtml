@@ -1,0 +1,44 @@
+﻿@model RentalSystem.Models.IndevidualButtonPartial
+@using RentalSystem.Models
+
+<td style="width: 400px;">
+    <div class="btn-group" role="group">
+        @Html.Partial("_IndevidualButtonPartial",
+            new IndevidualButtonPartial
+            {
+                Action = "Edit",
+                ButtonType = "btn-primary",
+                Glyth = "pencil",
+                Text = "Edit Button",
+                GenreId = Model.GenreId,
+                BookId = Model.BookId,
+                CustomerId = Model.CustomerId,
+                MembershipId = Model.MembershipId
+            })
+        @Html.Partial("_IndevidualButtonPartial",
+            new IndevidualButtonPartial
+            {
+                Action = "Details",
+                ButtonType = "btn-success",
+                Glyth = "list",
+                Text = "Details Button",
+                GenreId = Model.GenreId,
+                BookId = Model.BookId,
+                CustomerId = Model.CustomerId,
+                MembershipId = Model.MembershipId
+            })
+        @Html.Partial("_IndevidualButtonPartial",
+            new IndevidualButtonPartial
+            {
+                Action = "Delete",
+                ButtonType = "btn-danger",
+                Glyth = "trash",
+                Text = "Delete",
+                GenreId = Model.GenreId,
+                BookId = Model.BookId,
+                CustomerId = Model.CustomerId,
+                MembershipId = Model.MembershipId
+            })
+    </div>
+</td>
+

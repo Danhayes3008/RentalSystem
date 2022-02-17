@@ -36,3 +36,7 @@ textarea {
     padding-left: 10px;
 
 }
+
+a:hover{
+    color: whitesmoke !important;
+}

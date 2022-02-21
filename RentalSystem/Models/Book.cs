@@ -43,6 +43,7 @@ namespace RentalSystem.Models
 
         // this part of the table will display the date the item was added
         [Required]
+        [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString ="{0: MMM dd yyyy}")]
         public DateTime?  DateAdded { get; set; }
 
@@ -56,8 +57,8 @@ namespace RentalSystem.Models
         // allows you to enter a date for when the book was published
         [Required]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "0: MMM dd yyyy")]
-        public DateTime PublicationDate { get; set; }
+        [DisplayFormat(DataFormatString = "{0: MMM dd yyyy}")]
+        public DateTime? PublicationDate { get; set; }
 
         // this is the part that allows you to enter how many pages are in the book
         [Required]

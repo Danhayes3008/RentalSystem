@@ -1,55 +1,57 @@
 ﻿@model IEnumerable<RentalSystem.Models.Book>
+@using RentalSystem.Models 
 
 @{
     ViewBag.Title = "Index";
 }
-
+<br />
 <h3>Manage Books</h3>
+<br />
 
 <p>
     @Html.Partial("_CreateButtonPartial")
 </p>
+<br />
 <table class="table table-condensed table-hover">
     <tr class="table-header">
-        <th>
+        <th class="text-center">
             @Html.DisplayNameFor(model => model.ISBN)
         </th>
-        <th>
+        <th class="text-center">
             @Html.DisplayNameFor(model => model.Title)
         </th>
-        <th>
+        <th class="text-center">
             @Html.DisplayNameFor(model => model.Avaibility)
         </th>
-        <th>
+        <th class="text-center">
             @Html.DisplayNameFor(model => model.Price)
         </th>
-        <th>
+        <th class="text-center">
             @Html.DisplayNameFor(model => model.Genre.Name)
         </th>
+        <th></th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
 <tr>
-    <td>
+    <td class="text-center">
         @Html.DisplayFor(modelItem => item.ISBN)
     </td>
-    <td>
+    <td class="text-center">
         @Html.DisplayFor(modelItem => item.Title)
     </td>
-    <td>
+    <td class="text-center">
         @Html.DisplayFor(modelItem => item.Avaibility)
     </td>
-    <td>
+    <td class="text-center">
         @Html.DisplayFor(modelItem => item.Price)
     </td>
-    <td>
+    <td class="text-center">
         @Html.DisplayFor(modelItem => item.Genre.Name)
     </td>
     <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+        @Html.Partial("_TableButtonPartial", new IndevidualButtonPartial { BookId = item.Id })
     </td>
 </tr>
 }

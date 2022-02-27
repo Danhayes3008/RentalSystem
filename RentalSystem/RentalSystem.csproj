@@ -185,12 +185,25 @@
     <Compile Include="Controllers\GenreController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MembershipTypeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202202081456070_AddBookAndGenreClass.cs" />
     <Compile Include="Migrations\202202081456070_AddBookAndGenreClass.Designer.cs">
       <DependentUpon>202202081456070_AddBookAndGenreClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202271422186_AddPublisherToBookModel.cs" />
+    <Compile Include="Migrations\202202271422186_AddPublisherToBookModel.Designer.cs">
+      <DependentUpon>202202271422186_AddPublisherToBookModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202271529295_AddMembershipTypeToDatabase.cs" />
+    <Compile Include="Migrations\202202271529295_AddMembershipTypeToDatabase.Designer.cs">
+      <DependentUpon>202202271529295_AddMembershipTypeToDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202271531110_SeedMembershipTypeDatabase.cs" />
+    <Compile Include="Migrations\202202271531110_SeedMembershipTypeDatabase.Designer.cs">
+      <DependentUpon>202202271531110_SeedMembershipTypeDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -199,8 +212,10 @@
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\BookViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -280,6 +295,11 @@
     <Content Include="Views\Books\Details.cshtml" />
     <Content Include="Views\Books\Edit.cshtml" />
     <Content Include="Views\Books\Index.cshtml" />
+    <Content Include="Views\MembershipType\Create.cshtml" />
+    <Content Include="Views\MembershipType\Delete.cshtml" />
+    <Content Include="Views\MembershipType\Details.cshtml" />
+    <Content Include="Views\MembershipType\Edit.cshtml" />
+    <Content Include="Views\MembershipType\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -298,6 +318,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202202081456070_AddBookAndGenreClass.resx">
       <DependentUpon>202202081456070_AddBookAndGenreClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202271422186_AddPublisherToBookModel.resx">
+      <DependentUpon>202202271422186_AddPublisherToBookModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202271529295_AddMembershipTypeToDatabase.resx">
+      <DependentUpon>202202271529295_AddMembershipTypeToDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202271531110_SeedMembershipTypeDatabase.resx">
+      <DependentUpon>202202271531110_SeedMembershipTypeDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

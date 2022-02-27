@@ -4,53 +4,56 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>MembershipType</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SignUpFee)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SignUpFee)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ChargeRateOneMonth)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ChargeRateOneMonth)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ChargeRateSixMonth)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ChargeRateSixMonth)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <hr />
         @Html.AntiForgeryToken()
+        <fieldset disabled>
+            <div class="form-border">
+                <div class="row" style="padding-bottom:5px;padding-top:5px;">
+                    <div class="col-sm-2">
+                        @Html.LabelFor(model => Model.Name, htmlAttributes: new { @class = "control-label" })
+                    </div>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(model => Model.Name, htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="row" style="padding-bottom:5px;padding-top:5px;">
+                    <div class="col-sm-2">
+                        @Html.LabelFor(model => Model.SignUpFee, htmlAttributes: new { @class = "control-label" })
+                    </div>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(model => Model.SignUpFee, htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="row" style="padding-bottom:5px;padding-top:5px;">
+                    <div class="col-sm-2">
+                        @Html.LabelFor(model => Model.ChargeRateOneMonth, htmlAttributes: new { @class = "control-label" })
+                    </div>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(model => Model.ChargeRateOneMonth, htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="row" style="padding-bottom:5px;padding-top:5px;">
+                    <div class="col-sm-2">
+                        @Html.LabelFor(model => Model.ChargeRateSixMonth, htmlAttributes: new { @class = "control-label" })
+                    </div>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(model => Model.ChargeRateSixMonth, htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
 
+            </div>
+        </fieldset>
+        <br />
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Delete" class="btn btn-success btn-sm" /> 
+            @Html.Partial("_BackToListButtonPartial")
         </div>
-    }
-</div>
+    </div>
+}
+

@@ -17,9 +17,10 @@ namespace RentalSystem.Models
         [DataType(DataType.Currency)]
         [Required]
         public byte SignUpFee { get; set; }
-        [DisplayName("Rental Rate")]
+        [DisplayName("Charge Rate One Month")]
         [Required]
         public byte ChargeRateOneMonth { get; set; }
+        [DisplayName("Charge Rate Six Month")]
         [Required]
         public byte ChargeRateSixMonth { get; set; }
 

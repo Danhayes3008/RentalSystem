@@ -10,7 +10,7 @@ namespace RentalSystem.Models
     {
         // this is the Id for the items in the table
         [Required]
-        public int Id{ get; set; }
+        public int Id { get; set; }
         [Required]
         public string ISBN { get; set; }
 
@@ -44,8 +44,8 @@ namespace RentalSystem.Models
         // this part of the table will display the date the item was added
         [Required]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString ="{0: MMM dd yyyy}")]
-        public DateTime?  DateAdded { get; set; }
+        [DisplayFormat(DataFormatString = "{0: MMM dd yyyy}")]
+        public DateTime? DateAdded { get; set; }
 
         // gets the genre id
         [Required]
@@ -67,6 +67,7 @@ namespace RentalSystem.Models
         [Required]
         public string ProductDemensions { get; set; }
 
-
+        [Required]
+        public string Publisher { get; set; }
     }
 }
